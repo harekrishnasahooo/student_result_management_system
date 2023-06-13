@@ -8,6 +8,8 @@ import time
 from math import *
 import sqlite3
 import os
+import subprocess
+
 
 class Clock:
     def __init__(self, root):
@@ -163,7 +165,9 @@ class Clock:
                 else:
                     messagebox.showinfo("SuccessR", f"welcome:{self.txt_email.get()}", parent=self.root)
                     self.root.destroy()
-                    os.system("python dashboard.py")
+                    subprocess.Popen(
+                        ["python", r"D:\student_management_system\student_management_system\student_management.py"])
+
                 con.close()
 
 
